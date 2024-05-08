@@ -1,0 +1,4 @@
+load dict/short
+show
+quit
+

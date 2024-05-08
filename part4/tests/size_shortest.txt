@@ -1,0 +1,4 @@
+load dict/shortest
+size
+quit
+
