@@ -1,4 +1,0 @@
-load dict/short
-size
-quit
-
