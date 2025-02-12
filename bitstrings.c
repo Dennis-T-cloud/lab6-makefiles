@@ -1,33 +1,38 @@
-#include <stdio.h>
+#include <stddef.h>
+#include <stdio.h> 
+#include <assert.h>
 
-// set the nth bit of b to bit
-// example: set_nth_bit(0b101, 1, 1) => 0b111
-size_t set_nth_bit(size_t b, int n, int bit) {
-    // TODO
-}
 
-// return the subbitstring, where start is the least significant bit
-// (inclusive), and end is the most significant bit (inclusive)
-// example: sub_bitstring(0b101101, 2, 6) => 0b1011
-size_t sub_bitstring(size_t b, size_t start, size_t end) {
-    // TODO
-}
+int main(int argc, char *argv[]) {
+  char a1 = 0b01100001;
+  char b1 = 0b01100010;
+  char c1 = 0b01100011;
+  
+  assert((a1 _ b1) == c1);
 
-void print_bin(size_t n) {
-  int i;
-  unsigned int mask = 1 << (sizeof(int) * 8 - 1);
+  char a2 = 0b00111000;
+  char b2 = 0b01100001;
+  char c2 = 0b00100000;
+  assert((a2 _ b2) == c2);
 
-  for (i = 0; i < sizeof(int) * 8; i++) {
-    if (n & mask) { 
-      printf("1");
-    } else {
-      printf("0");
-    }
-    mask >>= 1;
-  }
-  printf("\n");
-}
+  char a3 = 0b01010101;
+  char b3 = 0b10101111;
+  char c3 = 0b11111111;
+  assert((a3 _ b3) == c3);
 
-int main(void) {
-    // Test things out here
+  char a4 = 0b01010101;
+  char b4 = 0b10101111;
+  char c4 = 0b11111010;
+  assert((a4 _ b4) == c4);
+
+  char a5 = 0b01010101;
+  char b5 = 0b10101111;
+  char c5 = 0b00000101;
+  assert((a5 _ b5) == c5);
+
+  char a6 = 0b00001010;
+  char b6 = 0b00000011;  
+  char c6 = 0b01010000;
+  assert((a6 _ b6) == c6);
+  
 }
