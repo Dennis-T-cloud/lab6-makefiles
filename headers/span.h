@@ -3,6 +3,9 @@
 // useful for the losing_track.c exercise from Lab 4, where we tried to return
 // a span of an existing string from getQueries.
 
+#ifndef SPAN_H
+#define SPAN_H
+
 struct string_span {
     // The entire C string in which this span can be found.
     char *string;
@@ -18,3 +21,4 @@ void span_free(struct string_span *span);
 char span_at(struct string_span *span, int index);
 char *span_alloc_copy(struct string_span *span);
 
+#endif
